@@ -1,4 +1,4 @@
-# Laravel Backend Winsale Inventory AI Sstem
+# Laravel Backend Winsale Inventory AI System
 
 This is the backend API for the **Sales AI Dashboard**, acting as the intermediary between:
 
