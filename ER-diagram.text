@@ -1,0 +1,42 @@
++------------------+            +------------------+
+|    categories    |            |     products     |
++------------------+            +------------------+
+| id (PK)          | 1        ∞ | id (PK)          |
+| name             +------------+ name             |
++------------------+            | category_id (FK) |
+                                | stock            |
+                                | min_stock        |
+                                | cost_price       |
+                                | sale_price       |
+                                | image (optional) |
+                                | created_at       |
+                                | updated_at       |
+                                +------------------+
+                                           |
+                                           |
+                          +----------------+----------------+
+                          |                                 |
+                ∞         |                                 |        ∞
++-------------------+     |           +--------------------+ |
+|       sales       |     |           |     purchases      | |
++-------------------+     |           +--------------------+ |
+| id (PK)           |     |           | id (PK)            | |
+| product_id (FK)   +-----+           | product_id (FK)    +--+
+| quantity          |                 | quantity           |
+| total_amount      |                 | total_cost         |
+| sale_date         |                 | purchase_date      |
+| created_at        |                 | created_at         |
++-------------------+                 +--------------------+
+
+
+                 ∞
++-----------------------------+
+|           alerts            |
++-----------------------------+
+| id (PK)                     |
+| product_id (FK)             |
+| type (low_stock, high_sell, |
+|       dead_stock, ai_flag)  |
+| message                     |
+| created_at                  |
++-----------------------------+

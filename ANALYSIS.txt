@@ -1,0 +1,71 @@
+KPI for dashboard
+
+Shows real-time KPIs from Laravel:
+
+Total sales today
+
+Total products
+
+Out-of-stock items
+
+Total purchases this month
+
+Revenue graph
+
+
+
+
+PYTHON
+
+-Sales insights
+Top-selling products this week
+
+Sales forecast for the next 7 days
+
+Sales money trend (graph)
+
+Daily/weekly/monthly sales patterns
+
+-Inventory insights
+Stock prediction (when will a product run out?)
+
+Products with high demand
+
+Dead Stock (products that don’t sell)
+
+Reorder suggestions based on AI
+
+-Purchasing insights
+
+Supplier dependency analysis
+
+Which products cost you the most money
+
+Purchase vs. sales correlation
+
+Inventory cost trends
+
+
+✔ Use SQL in Laravel for:
+
+grouping
+
+joining
+
+counting
+
+summing
+
+basic stock logic
+
+KPI calculations
+
+✔ Use Python for:
+
+predictions
+
+ML models
+
+forecasting
+
+AI recommendations
