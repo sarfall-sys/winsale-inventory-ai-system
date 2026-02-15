@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\Request;
 
+
     Route::post('/ai/forecast', [App\Http\Controllers\AiController::class, 'forecast']);
     Route::post('/ai/insights', [App\Http\Controllers\AiController::class, 'insights']);
     Route::post('/ai/anomalies', [App\Http\Controllers\AiController::class, 'anomalies']);
@@ -11,3 +12,11 @@ use Symfony\Component\HttpFoundation\Request;
     Route::put('/inventory/update-stock', [App\Http\Controllers\InventoryController::class, 'updateStock']);
     Route::get('/dashboard/stats', [App\Http\Controllers\DashboardController::class, 'statsData']);
     Route::get('/dashboard/charts', [App\Http\Controllers\DashboardController::class, 'chartData']);
+
+
+/* Route::post('/tokens/create', function (Request $request) {
+    $token = $request->user()->createToken($request->token_name);
+
+    return ['token' => $token->plainTextToken];
+});
+ */

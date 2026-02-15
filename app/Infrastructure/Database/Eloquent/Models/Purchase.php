@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Infrastructure\Database\Eloquent\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Infrastructure\Database\Eloquent\Models\Product;
 
 class Purchase extends Model
 {
