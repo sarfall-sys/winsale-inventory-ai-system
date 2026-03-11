@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\Product;
+namespace App\Infrastructure\Http\Controllers;
+use App\Infrastructure\Database\Eloquent\Models\Product;
 
 class InventoryController extends Controller
 {

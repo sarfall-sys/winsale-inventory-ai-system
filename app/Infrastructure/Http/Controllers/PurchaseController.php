@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Infrastructure\Http\Controllers;
 
-use App\Models\Purchase;
-use App\Http\Requests\StorePurchaseRequest;
-use App\Http\Requests\UpdatePurchaseRequest;
+use App\Infrastructure\Database\Eloquent\Models\Purchase;
+use App\Infrastructure\Http\Requests\StorePurchaseRequest;
+use App\Infrastructure\Http\Requests\UpdatePurchaseRequest;
 
 class PurchaseController extends Controller
 {

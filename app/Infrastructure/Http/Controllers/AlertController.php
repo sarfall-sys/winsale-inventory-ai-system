@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Infrastructure\Http\Controllers;
 
-use App\Models\Alert;
-use App\Http\Requests\StoreAlertRequest;
-use App\Http\Requests\UpdateAlertRequest;
+use App\Infrastructure\Database\Eloquent\Models\Alert;
+use App\Infrastructure\Http\Requests\StoreAlertRequest;
+use App\Infrastructure\Http\Requests\UpdateAlertRequest;
 
 class AlertController extends Controller
 {

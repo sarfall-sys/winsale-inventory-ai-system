@@ -7,7 +7,6 @@ class ListCategoryUseCase{
 
     private $categoryRepository;
 
-
     public function __construct(CategoryRepositoryInterface $categoryRepositoryInterface)
     {
         $this->categoryRepository = $categoryRepositoryInterface;
@@ -18,7 +17,5 @@ class ListCategoryUseCase{
         $category = $this->categoryRepository->findAll();
         return $category;
     }
-
-
 
 }

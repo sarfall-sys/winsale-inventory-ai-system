@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Auth\Controllers;
+namespace App\Infrastructure\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Infrastructure\Database\Eloquent\Models\User;
+use App\Infrastructure\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller

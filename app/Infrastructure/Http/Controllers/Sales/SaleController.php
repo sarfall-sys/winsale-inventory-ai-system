@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Infrastructure\Http\Controllers\Sales;
 
-use App\Http\Requests\StoreSaleRequest;
-use App\Http\Requests\UpdateSaleRequest;
-use App\Models\Sale;
+use App\Infrastructure\Http\Controllers\Controller;
+use App\Infrastructure\Database\Eloquent\Models\Sale;
+use App\Infrastructure\Http\Requests\StoreSaleRequest;
+use App\Infrastructure\Http\Requests\UpdateSaleRequest;
 
 class SaleController extends Controller
 {

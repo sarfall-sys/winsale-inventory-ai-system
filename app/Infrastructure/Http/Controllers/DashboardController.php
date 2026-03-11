@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Infrastructure\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\Purchase;
-use App\Models\Sale;
+use App\Infrastructure\Database\Eloquent\Models\Product;
+use App\Infrastructure\Database\Eloquent\Models\Purchase;
+use App\Infrastructure\Database\Eloquent\Models\Sale;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller

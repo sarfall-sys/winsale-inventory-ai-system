@@ -2,24 +2,28 @@
 
 namespace App\Appplication\Category\UseCases;
 
+use App\Appplication\Category\DTOs\CreateCategoryDTO;
+use App\Domain\Category\Entities\Category;
 use App\Domain\Category\Repositories\CategoryRepositoryInterface;
-use App\Domain\Category\Services\CategoryService;
 
 class UpdateCategoryUseCase
 {
     private $categoryRepository;
 
-    private $categoryService;
-
-    public function __construct(CategoryService $categoryService, CategoryRepositoryInterface $categoryRepositoryInterface)
+    public function __construct( CategoryRepositoryInterface $categoryRepositoryInterface)
     {
         $this->categoryRepository = $categoryRepositoryInterface;
-        $this->categoryService = $categoryService;
     }
 
-    public function handle(array $data)
+    public function handle(CreateCategoryDTO $data)
     {
-        $category = $this->categoryService->updateCategory($data);
+        $category = new Category(
+            id: null,
+            name: $data->name,
+            description: $data->description,
+
+        );
+
 
         return $this->categoryRepository->update($category);
     }

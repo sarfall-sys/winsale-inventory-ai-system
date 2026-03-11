@@ -9,8 +9,9 @@ use App\Appplication\Category\UseCases\UpdateCategoryUseCase;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use App\Domain\Category\Entities\Category;
 use App\Appplication\Category\DTOs\CreateCategoryDTO;
+use App\Appplication\Category\UseCases\DeleteCategoryUseCase;
+use App\Infrastructure\Http\Requests\StoreCategoryRequest as RequestsStoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -24,13 +25,13 @@ class CategoryController extends Controller
 
     private $deleteCategoryUseCase;
 
-    public function __construct(CreateCategoryUseCase $createCategoryUseCase, UpdateCategoryUseCase $updateCategoryUseCase, GetCategoryUseCase $getCategoryByIdUseCase, GetCategoryUseCase $getAllCategoriesUseCase, ListCategoryUseCase $listCategoryUseCase)
+    public function __construct(CreateCategoryUseCase $createCategoryUseCase, UpdateCategoryUseCase $updateCategoryUseCase, GetCategoryUseCase $getCategoryByIdUseCase, ListCategoryUseCase $listCategoryUseCase, DeleteCategoryUseCase $deleteCategoryUseCase)
     {
         $this->createCategoryUseCase = $createCategoryUseCase;
         $this->updateCategoryUseCase = $updateCategoryUseCase;
         $this->getCategoryByIdUseCase = $getCategoryByIdUseCase;
-        $this->getAllCategoriesUseCase = $getAllCategoriesUseCase;
         $this->getAllCategoriesUseCase = $listCategoryUseCase;
+        $this->deleteCategoryUseCase = $deleteCategoryUseCase;
     }
 
     public function index() {
@@ -40,7 +41,7 @@ class CategoryController extends Controller
     }
 
 
-    public function store(StoreCategoryRequest $request)
+    public function store(RequestsStoreCategoryRequest $request)
     {
         $dto = new CreateCategoryDTO(
             name: $request->name,
@@ -53,5 +54,42 @@ class CategoryController extends Controller
         return response()->json($created);
     }
 
+    public function show($id)
+    {
+        $category = $this->getCategoryByIdUseCase->handle($id);
+
+        if (!$category) {
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        return response()->json($category);
+    }
+
+    public function update(UpdateCategoryRequest $request, $id)
+    {
+        $dto = new CreateCategoryDTO(
+            name: $request->name,
+            description: $request->description
+        );
+
+        $updated = $this->updateCategoryUseCase->handle($dto);
+
+        if (!$updated) {
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        return response()->json($updated);
+    }
+
+    public function destroy($id)
+    {
+        $deleted = $this->deleteCategoryUseCase->handle($id);
+
+        if (!$deleted) {
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+
+        return response()->json(['message' => 'Category deleted successfully']);
+    }
 
 }
