@@ -9,6 +9,10 @@ This is the backend API for the **Sales AI Dashboard**, acting as the intermedia
 It handles sales, products, authentication, and all requests forwarded to the Python service.
 
 ---
+## Live Demo:
+
+🎥 https://drive.google.com/file/d/1Ym4QftyEcJaBXdxq7Y_OLhoc2kUmsNVr/view?usp=drive_link
+---
 
 ## 🚀 Current Features
 - REST API for Sales and Products
