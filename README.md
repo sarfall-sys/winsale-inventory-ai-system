@@ -11,7 +11,7 @@ It handles sales, products, authentication, and all requests forwarded to the Py
 ---
 ## Live Demo:
 
-🎥 https://drive.google.com/file/d/1Ym4QftyEcJaBXdxq7Y_OLhoc2kUmsNVr/view?usp=drive_link
+🎥 https://drive.google.com/file/d/1Ym4QftyEcJaBXdxq7Y_OLhoc2kUmsNVr/view?usp=sharing
 ---
 
 ## 🚀 Current Features
